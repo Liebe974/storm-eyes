@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import TweetBox from "@/components/TweetBox"
 import { ArrowLeftIcon } from "@heroicons/react/24/outline"
 import { Post, User } from "@prisma/client"
