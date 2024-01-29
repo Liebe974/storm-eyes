@@ -3,7 +3,6 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
 
-// Ce code TypeScript définit une fonction de gestionnaire d'API à l'aide de Next.js. Il vérifie une session utilisateur et effectue différentes actions en fonction de la méthode HTTP (GET ou POST) et de la présence d'un paramètre email dans la requête. Si la méthode est GET, il recherche un utilisateur par email et renvoie l'utilisateur s'il est trouvé. Si la méthode est POST, il crée ou met à jour un utilisateur en fonction de la présence de l'e-mail dans le corps de la requête. Si des erreurs surviennent, elles sont consignées et renvoient un statut 201 avec un message d'erreur.
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
