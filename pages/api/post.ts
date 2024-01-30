@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
-
+//Ce code définit une fonction de gestionnaire asynchrone pour un point d'API. Il gère les requêtes POST et GET, interagit avec une base de données en utilisant Prisma, et gère l'authentification des utilisateurs en utilisant des sessions. Il inclut également la gestion des erreurs pour les requêtes échouées.
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse

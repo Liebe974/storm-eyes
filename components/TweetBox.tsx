@@ -3,7 +3,7 @@ import { HeartIcon as HeartIconSolid, BookmarkIcon as BookmarkIconSolid } from "
 import { Post, User } from "@prisma/client";
 import Image from "next/image";
 import { useState } from "react";
-
+//Ce code définit un composant React appelé TweetBox qui affiche un tweet et permet à l'utilisateur de l'aimer et de le mettre en favori. Il utilise le hook useState pour gérer l'état des emails aimés et mis en favori, et effectue des requêtes asynchrones vers une API pour mettre à jour le statut aimé et mis en favori. Le composant affiche également les données de l'utilisateur et du tweet, et gère les événements de clic pour aimer et mettre en favori le post.
 export default function TweetBox({ onClick, userData, post, userEmail }: {
     onClick: () => void,
     userData: User,

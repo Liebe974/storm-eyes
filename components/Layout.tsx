@@ -8,7 +8,7 @@ import { useRouter } from "next/router"
 import { signOut } from "next-auth/react"
 import storm from "../public/storm.png"
 import stormName from "../public/Stormname.png"
-
+//Ce extrait de code définit un composant React appelé TwitterSVG, qui affiche deux images à l'intérieur d'une div avec des noms de classe spécifiques. Les images proviennent des URL fournies dans les objets storm et stormName.
 const TwitterSVG = () => (
    <div className="flex gap-2">
        <img className="h-10 w-10" src={storm.src} />

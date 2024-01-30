@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
-
+//Ce code définit une fonction de gestionnaire asynchrone pour un point de terminaison API. Il vérifie d'abord une session utilisateur, puis traite les requêtes GET pour récupérer des articles et des données utilisateur à partir d'une base de données en utilisant Prisma. Si la méthode n'est pas GET, il renvoie un message "requête incorrecte". Si des erreurs surviennent pendant le traitement, il enregistre l'erreur et renvoie un message "erreur" avec le code d'état 201.
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse

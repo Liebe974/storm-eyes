@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
-
+//Ce extrait de code définit une fonction asynchrone appelée "handler" qui gère les requêtes HTTP. Elle vérifie la session de l'utilisateur, et si l'utilisateur n'est pas connecté, elle retourne un code d'état 401. Si la méthode de la requête est "GET", elle récupère des publications et des données utilisateur à partir d'une base de données en utilisant Prisma et les renvoie dans la réponse. Si la méthode de la requête n'est pas "GET", elle renvoie un code d'état 201 avec un message "requête incorrecte".
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse

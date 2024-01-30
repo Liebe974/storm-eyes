@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import { signIn } from "next-auth/react"
-
+//Ce code définit un composant fonctionnel appelé Login, qui rend un bouton pour se connecter avec Google. Lorsque le bouton est cliqué, il déclenche la fonction signIn avec le fournisseur "google" et redirige vers l'URL "/" après une connexion réussie.
 export default function Login() {
     return <div className="w-full h-screen flex items-center justify-center">
         <button className="flex text-white rounded-sm border border-blue-500" onClick={() => signIn("google", { callbackUrl: "/" })}>

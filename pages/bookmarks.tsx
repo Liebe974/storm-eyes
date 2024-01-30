@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import TweetBox from "@/components/TweetBox"
 import { ArrowLeftIcon } from "@heroicons/react/24/outline"
 import { Post, User } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-
+//Ce code définit un composant fonctionnel appelé Bookmarks. Il utilise le hook useRouter du framework Next.js pour accéder à l'objet router. Il utilise également le hook useSession pour récupérer les données de session de l'utilisateur. Le composant effectue une requête asynchrone pour récupérer les tweets mis en signet et leurs données utilisateur associées. Ensuite, il rend les tweets mis en signet et les données utilisateur dans le JSX du composant, gérant les états de chargement en cours de route.
 export default function Bookmarks() {
     const router = useRouter()
     const { data: session, status } = useSession({ required: true })

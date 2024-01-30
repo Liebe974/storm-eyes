@@ -1,6 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
+//Il s'agit d'un fichier de schéma Prisma qui définit un modèle de données pour une base de données. Il comprend un générateur pour le client Prisma, une source de données pour une base de données MongoDB, et deux modèles : User et Post. Les modèles définissent la structure des tables User et Post dans la base de données, y compris les types de données, les contraintes et les valeurs par défaut.
 generator client {
   provider = "prisma-client-js"
 }

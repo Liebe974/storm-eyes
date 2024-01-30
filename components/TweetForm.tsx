@@ -2,7 +2,7 @@ import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { useState } from "react"
 import { useDropzone } from "react-dropzone"
-
+//Ce code définit un composant React appelé TweetForm, qui est un formulaire pour créer un tweet. Il prend plusieurs props, notamment la fonction onSubmit, txt, la fonction setTxt, base64, la fonction setBase64, profileImage et label. À l'intérieur du composant, il utilise les hooks useState et useEffect pour gérer l'état et effectuer des effets secondaires. Il utilise également le hook useDropzone pour gérer la fonctionnalité de dépôt de fichiers. Le composant rend un formulaire avec une zone de saisie pour le texte du tweet, un aperçu de l'image si une chaîne base64 est présente, et des boutons pour ajouter une image et soumettre le tweet. Lorsque le bouton de soumission est cliqué, il déclenche la fonction onSubmit et réinitialise la chaîne base64.
 export default function TweetForm({ onSubmit, txt, setTxt, base64, setBase64, profileImage, label }: {
     onSubmit: () => void,
     txt: string,
