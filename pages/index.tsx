@@ -8,7 +8,7 @@ import TweetBox from '@/components/TweetBox'
 import { Router, useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
-//Ce code est un composant React appelé Home. Il utilise différents hooks tels que useState et useEffect pour gérer l'état local du composant et gérer les effets secondaires. Il utilise également le hook useRouter de Next.js pour gérer la navigation côté client. Le composant récupère des données depuis une API pour afficher une liste de tweets et permet à l'utilisateur de publier de nouveaux tweets. Il gère également l'authentification de l'utilisateur et la création de profil.
+
 export default function Home() {
   const router = useRouter()
   const { data: session, status } = useSession({

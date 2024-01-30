@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import TweetBox from "@/components/TweetBox"
 import TweetForm from "@/components/TweetForm"
 import { ArrowLeftIcon } from "@heroicons/react/24/outline"
@@ -6,7 +5,7 @@ import { Post, User } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-//Ce code définit un composant React appelé TweetDetails qui gère l'état à l'aide du crochet useState. Il utilise également le crochet useEffect pour récupérer des données et inclut des fonctions pour gérer les réponses, obtenir les détails d'un tweet et récupérer les données de l'utilisateur. Le composant rend également une interface utilisateur pour afficher les tweets, soumettre des réponses et afficher les réponses.
+
 export default function TweetDetails() {
     const router = useRouter()
     const { tid } = router.query
@@ -21,7 +20,6 @@ export default function TweetDetails() {
     const [replyUserData, setReplyUserData] = useState<Array<User>>([])
     const [loading, setLoading] = useState<boolean>(true)
 
-    //Ce extrait de code définit une fonction asynchrone appelée reply qui envoie une requête POST à "/api/post" avec un corps en format JSON. Si le statut de la réponse est 200, alors il récupère les réponses et les détails du tweet, efface certains états, et met à jour le composant.
 
     async function reply() {
         const response = await fetch("/api/post", {
@@ -45,7 +43,7 @@ export default function TweetDetails() {
 
         }
     }
-//Ce code définit une fonction asynchrone getReplies qui envoie une requête GET à /api/comment avec un paramètre tid. Si le statut de la réponse est 200, il définit les réponses et les données utilisateur de la réponse comme variables d'état, puis définit l'état de chargement sur false.
+
     async function getReplies() {
         const params = new URLSearchParams({
             tid: tid as string
@@ -58,7 +56,7 @@ export default function TweetDetails() {
         }
         setLoading(false)
     }
-//Ce snippet de code définit une fonction asynchrone getCurrentUser qui envoie une requête GET à "/api/user" avec l'e-mail en tant que paramètre de requête. Si le statut de la réponse est 200, il analyse la réponse JSON et définit l'image de profil si le message est "utilisateur trouvé".
+
     async function getCurrentUser() {
         const params = new URLSearchParams({
             email: session?.user?.email as string
@@ -72,8 +70,7 @@ export default function TweetDetails() {
         }
     }
 
-    // tid -> obtenir des données de la base de données en utilisant une API
-    //Ce code définit une fonction asynchrone getTweetDetails qui récupère les détails d'un tweet depuis une base de données en utilisant une API. Elle envoie une requête à /api/tweet/{tid}, vérifie le statut de la réponse, et si elle est réussie, définit les données du post et de l'utilisateur en fonction des données JSON reçues.
+    // tid -> get data from database using an api 
     async function getTweetDetails() {
         const response = await fetch(`/api/tweet/${tid}`)
         if (response.status == 200) {
@@ -84,9 +81,9 @@ export default function TweetDetails() {
             }
         }
     }
-//Ce code définit une fonction asynchrone qui récupère les détails d'un post et ses réponses si la session est authentifiée et qu'un identifiant de post est présent. Il définit l'état de chargement à vrai, puis attend l'exécution de trois fonctions asynchrones différentes pour récupérer les détails d'un tweet, les informations de l'utilisateur actuel et les réponses.
+
     useEffect(() => {
-        // récupérer les détails du post et les réponse
+        // fetch the tweet details and replies
         async function f() {
             if (session && status == "authenticated" && tid) {
                 setLoading(true)
@@ -96,7 +93,7 @@ export default function TweetDetails() {
             }
         }
         f()
-    }, [status, session, tid, getTweetDetails, getCurrentUser, getReplies])
+    }, [status, session, tid])
 
     if (status == "loading") return <div>loading...</div>
 

@@ -6,15 +6,11 @@ import { ArrowLeftOnRectangleIcon, BookmarkIcon, HomeIcon, UserIcon } from "@her
 import { HomeIcon as HomeIconSolid, BookmarkIcon as BookmarkIconSolid, UserIcon as UserIconSolid } from "@heroicons/react/24/solid"
 import { useRouter } from "next/router"
 import { signOut } from "next-auth/react"
-import storm from "../public/storm.png"
-import stormName from "../public/Stormname.png"
-//Ce extrait de code définit un composant React appelé TwitterSVG, qui affiche deux images à l'intérieur d'une div avec des noms de classe spécifiques. Les images proviennent des URL fournies dans les objets storm et stormName.
+import storm from "@/public/storm.png"
+
 const TwitterSVG = () => (
-   <div className="flex gap-2">
-       <img className="h-10 w-10" src={storm.src} />
-       <img className="h-10 w-10" src={stormName.src} />
-   </div>
-)
+    <img className="h-6 w-6" src={storm.src} />
+    )
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const router = useRouter()

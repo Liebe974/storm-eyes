@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import TweetBox from "@/components/TweetBox"
 import { ArrowLeftIcon, CameraIcon } from "@heroicons/react/24/outline"
 import { Post, User } from "@prisma/client"
@@ -8,7 +7,6 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
 
-// Ce code définit un composant React pour une page de profil utilisateur. Il utilise différents hooks tels que useRouter, useSession, et useState pour gérer l'état et effectuer des actions asynchrones. Le composant inclut des fonctions pour mettre à jour le profil de l'utilisateur, récupérer les tweets de l'utilisateur et récupérer les détails de l'utilisateur. Il inclut également des gestionnaires d'événements pour déposer et télécharger une image de profil. Le composant rend différents éléments d'interface utilisateur en fonction de l'état de chargement et de l'état d'authentification de l'utilisateur.
 export default function Profile() {
     const router = useRouter()
     const { data: session, status } = useSession({ required: true })
@@ -90,7 +88,7 @@ export default function Profile() {
             }
         }
         f()
-    }, [status, session, getUserDetails, getUserTweets])
+    }, [status, session])
 
     if (status == "loading") return <div>loading...</div>
 
