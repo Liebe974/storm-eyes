@@ -17,7 +17,7 @@ export default function Profile() {
     const [name, setName] = useState<string>("")
     const [username, setUsername] = useState<string>("")
     const [updating, setUpdating] = useState<boolean>(false)
-
+//Ce code est une fonction asynchrone qui met à jour le profil de l'utilisateur. Elle définit un état de chargement, envoie une requête POST à l'endpoint "/api/user" avec l'email de l'utilisateur et les données de l'image de profil, puis déclenche une fonction pour récupérer les tweets de l'utilisateur avant de réinitialiser l'état de chargement.
     async function updateProfile() {
         setUpdating(true)
         const response = await fetch("/api/user", {
@@ -33,7 +33,7 @@ export default function Profile() {
         await getUserTweets()
         setUpdating(false)
     }
-
+//Ce code définit une fonction asynchrone getUserTweets qui récupère les tweets d'un utilisateur en fonction de son email. Il construit une URL avec l'email de l'utilisateur en tant que paramètre de requête, envoie une requête au serveur, et traite la réponse si elle est réussie, mettant à jour les tweets de l'utilisateur et les données utilisateur associées. Enfin, il défini l'état de chargement sur false.
     async function getUserTweets() {
         const params = new URLSearchParams({
             email: session?.user?.email as string
@@ -46,7 +46,7 @@ export default function Profile() {
         }
         setLoading(false)
     }
-
+//Ce code définit une fonction asynchrone getUserDetails qui envoie une requête GET à "/api/user" avec l'e-mail de l'utilisateur comme paramètre de requête. Si le statut de la réponse est 200, il traite les données JSON en définissant l'image de profil encodée en base64, le nom et le nom d'utilisateur.
     async function getUserDetails() {
         const params = new URLSearchParams({
             email: session?.user?.email as string
@@ -59,7 +59,7 @@ export default function Profile() {
             setUsername(data.user.username)
         }
     }
-
+//Ce snippet de code définit une fonction handleDrop qui prend un tableau d'objets File en argument. Il sélectionne le premier fichier du tableau, crée un nouveau FileReader, met en place un rappel pour quand le fichier est lu, puis commence à lire le fichier en tant qu'URL de données. Lorsque le fichier est lu, la représentation base64 du fichier est stockée à l'aide de la fonction setBase64.
     function handleDrop(files: File[]) {
         const file = files[0]
         const reader = new FileReader()
