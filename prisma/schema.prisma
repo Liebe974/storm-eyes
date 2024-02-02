@@ -1,5 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Ce extrait de code est une configuration pour un schéma Prisma. Il définit un client Prisma, une source de données MongoDB et deux modèles : User et Post. Les modèles spécifient les champs et leurs types, ainsi que divers attributs tels que les valeurs par défaut, l'unicité et les relations.
 
 generator client {
   provider = "prisma-client-js"

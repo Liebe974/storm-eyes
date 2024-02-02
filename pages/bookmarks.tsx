@@ -4,14 +4,14 @@ import { Post, User } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-
+//Ce code définit un composant fonctionnel appelé "Bookmarks" qui récupère et affiche les tweets mis en signet par l'utilisateur. Il utilise le hook useRouter de Next.js pour obtenir l'objet router, le hook useSession pour obtenir la session de l'utilisateur, et useState pour gérer l'état de bookmarkedTweets, bookmarkedTweetsUserData et loading. Il définit également une fonction asynchrone getBookmarks pour récupérer les données des tweets mis en signet et définir l'état en conséquence. Le composant utilise useEffect pour appeler getBookmarks lorsque le statut de la session change. L'interface utilisateur rend conditionnellement le chargement ou les tweets mis en signet en fonction du statut de la session et de l'état de chargement.
 export default function Bookmarks() {
     const router = useRouter()
     const { data: session, status } = useSession({ required: true })
     const [bookmarkedTweets, setBookmarkedTweets] = useState<Array<Post>>([])
     const [bookmarkedTweetsUserData, setBookmarkedTweetsUserData] = useState<Array<User>>([])
     const [loading, setLoading] = useState<boolean>(true)
-
+//Ce extrait de code définit une fonction asynchrone getBookmarks qui envoie une requête pour récupérer les signets du serveur. Il construit un paramètre de requête avec l'e-mail de l'utilisateur, envoie une requête GET à "/api/bookmark" avec le paramètre construit, et traite la réponse en définissant les tweets mis en signet et les données utilisateur. Enfin, il définit l'état de chargement sur faux.
     async function getBookmarks() {
         const params = new URLSearchParams({
             email: session?.user?.email as string
@@ -26,7 +26,7 @@ export default function Bookmarks() {
     }
 
     useEffect(() => {
-        // fetch the tweet details and replies
+       // Ce extrait de code est une fonction asynchrone qui récupère les détails d'un tweet et ses réponses. Elle vérifie d'abord si la session existe et si le statut est "authentifié", puis elle définit le chargement à vrai et appelle la fonction getBookmarks.
         async function f() {
             if (session && status == "authenticated") {
                 setLoading(true)

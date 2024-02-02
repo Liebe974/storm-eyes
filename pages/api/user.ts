@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
-
+//Ce snippet de code définit une fonction asynchrone appelée handler qui gère les requêtes HTTP dans une route API Next.js. Il vérifie d'abord la session utilisateur, puis traite les requêtes GET et POST pour récupérer ou modifier les données utilisateur en utilisant Prisma pour les opérations de base de données. Il gère également les réponses d'erreur.
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse

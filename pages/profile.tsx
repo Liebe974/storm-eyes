@@ -6,7 +6,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
-
+//Ce snippet de code définit un composant React appelé Profile. Il inclut des fonctions pour mettre à jour le profil de l'utilisateur, récupérer les tweets de l'utilisateur et obtenir les détails de l'utilisateur depuis le serveur. Il gère également les événements de dépôt de fichiers et utilise le crochet useDropzone. Le composant affiche un message de chargement pendant le chargement des données, puis affiche les détails du profil de l'utilisateur et ses tweets une fois les données chargées.
 export default function Profile() {
     const router = useRouter()
     const { data: session, status } = useSession({ required: true })
@@ -79,7 +79,7 @@ export default function Profile() {
     })
 
     useEffect(() => {
-        // fetch the tweet details and replies
+        // Ce code est une fonction TypeScript qui récupère les détails d'un tweet et ses réponses si la session est authentifiée. Elle définit le chargement à vrai, puis appelle de manière asynchrone les fonctions pour obtenir les détails de l'utilisateur et les tweets de l'utilisateur.
         async function f() {
             if (session && status == "authenticated") {
                 setLoading(true)

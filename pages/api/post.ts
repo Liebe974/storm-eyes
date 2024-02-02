@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import prisma from "@/lib/prisma"
-
+//Ce code définit une fonction asynchrone appelée "handler" qui gère différentes méthodes HTTP (POST et GET) pour un point de terminaison API. Il utilise le ORM Prisma pour interagir avec une base de données, et inclut une logique pour créer des publications, gérer des réponses, récupérer des publications et les données utilisateur associées. Il gère également l'authentification en utilisant une session serveur. Si une erreur se produit, il enregistre l'erreur et renvoie un statut 201 avec un message d'erreur.
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
